@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Bot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <img src="https://placehold.co/40x40" alt="Logo">
+                <h1>Customer Support Bot</h1>
+            </div>
+            <div class="actions">
+                <button id="upload-btn" class="btn btn-secondary">Upload Documents</button>
+                <input type="file" id="file-upload" accept=".pdf,.txt,.docx" style="display: none;">
+            </div>
+        </header>
+        
+        <div class="chat-container">
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot">
+                    <div class="message-content">
+                        <p>Hello! I'm your customer support assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <textarea id="chat-input" placeholder="Type your message here..." rows="1"></textarea>
+                <button id="send-btn" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Upload Status Modal -->
+    <div class="modal" id="upload-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Upload Document</h2>
+            <p>Upload a document to the knowledge base. Supported formats: PDF, TXT, DOCX.</p>
+            <div class="upload-area">
+                <div id="upload-status"></div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="upload-progress"></div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="select-file-btn" class="btn btn-secondary">Select File</button>
+                <button id="confirm-upload-btn" class="btn btn-primary">Upload</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
